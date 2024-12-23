@@ -1,7 +1,7 @@
-% this script implements the hybrid of PSO and GWO optimization algorithm. 
-%This code is developed at https://free-thesis.com
-% GWO code from https://in.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo
-%is extended to make it hybrid with PSO and better than GWO.
+% Bu betik, PSO ve GWO optimizasyon algoritmasının hibrit bir versiyonunu uygular.
+% Bu kod, https://free-thesis.com adresinde geliştirilmiştir.
+% https://in.mathworks.com/matlabcentral/fileexchange/44974-grey-wolf-optimizer-gwo
+% adresindeki GWO kodu genişletilerek PSO ile hibrit hale getirilmiş ve GWO'dan daha iyi bir versiyon oluşturulmuştur.
 
 %%
 
@@ -9,20 +9,20 @@ clear all
 clc
 close all
 
-SearchAgents_no=30; % Number of search agents
+SearchAgents_no=30; % Arama aracılarının sayısı
 
-Function_name='F18'; % Name of the test function that can be from F1 to F23 (Table 1,2,3 in the paper)
+Function_name='F18'; % F1'den F23'e kadar olabilen test fonksiyonunun adı (Makaledeki Tablo 1,2,3)
 
-Max_iteration=500; % Maximum numbef of iterations
+Max_iteration=500; % Maksimum yineleme sayısı
 
-% Load details of the selected benchmark function
+% Seçili kıyaslama fonksiyonunun yükleme ayrıntıları
 [lb,ub,dim,fobj]=Get_Functions_details(Function_name);
 
 [Best_score,Best_pos,PSOGWO_cg_curve]=PSOGWO(SearchAgents_no,Max_iteration,lb,ub,dim,fobj);
 [Alpha_score,Alpha_pos,GWO_cg_curve]=GWO(SearchAgents_no,Max_iteration,lb,ub,dim,fobj);
 
 figure('Position',[500 500 660 290])
-%Draw search space
+%Arama alanını çiz
 subplot(1,2,1);
 func_plot(Function_name);
 title('Parameter space')
@@ -30,7 +30,7 @@ xlabel('x_1');
 ylabel('x_2');
 zlabel([Function_name,'( x_1 , x_2 )'])
 
-%Draw objective space
+%Hedef alanı çiz
 subplot(1,2,2);
 semilogy(PSOGWO_cg_curve,'Color','r')
 hold on
