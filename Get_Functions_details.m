@@ -1,9 +1,9 @@
-% This function containts full information and implementations of the benchmark 
-% functions in Table 1, Table 2, and Table 3 in the paper
+% Bu fonksiyon, makaledeki Tablo 1, Tablo 2 ve Tablo 3'te yer alan 
+% kıyaslama (benchmark) fonksiyonlarının tam bilgilerini ve uygulamalarını içerir.
 
-% lb is the lower bound: lb=[lb_1,lb_2,...,lb_d]
-% up is the uppper bound: ub=[ub_1,ub_2,...,ub_d]
-% dim is the number of variables (dimension of the problem)
+% lb alt sınırdır: lb=[lb_1, lb_2, ..., lb_d] 
+% ub üst sınırdır: ub=[ub_1, ub_2, ..., ub_d] 
+% dim değişken sayısıdır (problemin boyutu)
 
 function [lb,ub,dim,fobj] = Get_Functions_details(F)
 
