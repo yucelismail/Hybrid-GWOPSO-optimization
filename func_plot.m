@@ -1,4 +1,4 @@
-% This function draw the benchmark functions
+% Bu fonksiyon, kıyaslama fonksiyonlarını çizer
 
 function func_plot(func_name)
 
